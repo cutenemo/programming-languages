@@ -7,3 +7,4 @@ Examples:
 5. Type-inference
 6. Thunks
 7. Promises in Racket
+8. Static Checking
