@@ -1,0 +1,82 @@
+Coursera - UW - Dan Grossman
+personal notes, the actual notes are highly recommended 
+
+(1) Static Checking
+-------------------------------
+static checking happens after parsing and before runtime
+it is part of the language definition 
+The most common way to define a language’s static checking is via a type system
+
+example
+preventing 3 / 0 can happen at
+0) in the editor
+1) compile time (Racket)
+2) link time (let it pass when checking individual files, disallow it later if may gets called in main)
+3) run time (ML)
+4) later! return Inf
+
+
+(2) Correctness of Type Systems
+-------------------------------
+Suppose we have a type system:
+
+It is sound if we prevent false negatives (passing a string to an int argument)
+It is complete if it prevents false positives 
+
+In modern languages, type systems are sound (they prevent what they claim to) 
+but not complete (they reject programs they need not reject)
+
+it is impossible to implement a static checker that given any program in your language 
+(a) always terminates, (b) is sound, and (c) is complete. 
+Since we have to give up one, (c) seems like the best option (programmers do not like compilers that may not terminate).
+
+
+
+(3) Weak Typing
+-------------------------------
+This is when we don't check at neither compile time nor runtime
+C/C++ is an example (accessing out of bound array elements)
+
+Languages where the behavior of buggy programs is more limited are called strongly typed.
+This is not to be confused with dynamic typing (Racket is dynamically typed and it is also strongly typed)
+
+
+
+
+(4) Static vs Dynamic Typing
+-------------------------------
+note that most languages do a mix of both
+
+(a) Convenience
+- Dynamic typing is able to mix-and-match different kinds of data without having to declare new type definitions 
+- Static typing makes it more convenient to assume data has a certain type
+
+(b) Not preventing useful programs
+- Static typing (ML for example can reject a program because the type checker can't assign a type to a variable) (check lecture example)
+
+(c) Catching bugs early
+- Static typing makes it easier to catch bugs early
+
+(d) Performance
+- Static typing can lead to faster code since it does not need to perform type tests at run time.
+In fact, much of the performance advantage may result from not storing the type tags in the first place, which takes more space and slows down constructors
+- Dynamic typing can be optimized to not to tag everything
+
+(e) Code reuse
+- Dynamic typing leads to easier code reuse with no restrictions on types
+- Static typing should not have issues because modern systems should support reasonable code reuse with generics and sub tying
+
+(f) Prototyping
+- Dynamic typing makes it easier in the early stages when you’re not yet aware of all the cases you need in datatypes
+- Static typing helps in preventing inconsistencies and invalid assumptions later on
+
+(g) Code Evolution
+- Dynamic typing makes it easier to add functionality since we have no types (no callers will break)
+- Static typing can help with detecting everywhere in code that needs to be changed
+
+
+
+
+
+
+
