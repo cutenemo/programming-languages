@@ -8,3 +8,4 @@ Examples:
 6. Thunks
 7. Promises in Racket
 8. Static Checking
+9. Blocks and Procs in Ruby
