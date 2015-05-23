@@ -1,11 +1,12 @@
-Examples:
+Small Examples:
 
-1. Currying
-2. Closure
-3. Lexical Scope
-4. Tail-recursion
-5. Type-inference
-6. Thunks
-7. Promises in Racket
-8. Static Checking
+1. Currying in ML
+2. Closures and Lexical Scope in ML
+3. Tail-recursion in ML
+4. Type-inference in ML
+5. Thunks in Racket
+6. Promises in Racket
+7. Streams in Racket
+8. Static vs Dynamic Checking
 9. Blocks and Procs in Ruby
+10. Protocols in Objective-C
